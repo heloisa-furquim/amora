@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Clube Aflora</title>
+  <meta name="description" content="Encontros para mulheres que querem descobrir novos interesses, experimentar hobbies e viver experiências diferentes.">
+  <meta name="theme-color" content="#f2e7fa">
+  <link rel="icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=Pinyon+Script&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!--INICIO-->
+  <header class="topo">
+    <div class="wrap">
+      <div class="barra-topo">
+        <a class="marca" href="#agenda" aria-label="Clube Aflora, ir para a agenda">
+          <img class="marca-logo" src="assets/logo.png" alt="" width="44" height="44">
+          <span class="marca-nome"><span class="marca-script">Clube</span><span class="marca-caps">Aflora</span></span>
+        </a>
+        <a class="insta" id="link-insta" href="https://www.instagram.com/clube.aflora/" target="_blank" rel="noopener">@clube.aflora</a>
+      </div>
+
+      <div class="hero" id="hero">
+        <ul class="hero-tags" aria-label="Sobre o clube">
+          <li>Mulheres</li><li>Experiências</li><li>Hobbies</li>
+        </ul>
+        <h1 class="hero-titulo">
+          <span class="hero-caps">Vamos descobrir algo</span>
+          <span class="hero-script">novo juntas?</span>
+        </h1>
+        <p class="hero-texto">A vida não precisa ser só trabalho e obrigações. Escolha uma data no calendário e garanta seu lugar no próximo encontro.</p>
+      </div>
+    </div>
+  </header>
+
+  <main id="view-agenda" class="wrap agenda">
+    <section class="calendario" aria-labelledby="cal-mes">
+      <div class="cal-cabeca">
+        <button class="cal-nav" id="cal-ant" type="button" aria-label="Mês anterior">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <h2 class="cal-mes" id="cal-mes" aria-live="polite">Novembro <span>2026</span></h2>
+        <button class="cal-nav" id="cal-prox" type="button" aria-label="Próximo mês">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div class="cal-semana" aria-hidden="true">
+        <span>D</span><span>S</span><span>T</span><span>Q</span><span>Q</span><span>S</span><span>S</span>
+      </div>
+      <div class="cal-dias" id="cal-dias"></div>
+      <div class="cal-legenda" aria-hidden="true">
+        <span><i class="flor flor-evento"></i>tem encontro</span>
+        <span><i class="flor flor-sel"></i>dia escolhido</span>
+      </div>
+    </section>
+
+    <section class="lista" aria-labelledby="lista-titulo">
+      <div class="lista-cabeca">
+        <h2 class="lista-titulo" id="lista-titulo">Agenda de novembro</h2>
+        <p class="lista-conta" id="lista-conta"></p>
+      </div>
+      <div class="filtro" id="filtro" hidden>
+        <span id="filtro-texto"></span>
+        <button type="button" id="filtro-limpar">Ver o mês todo</button>
+      </div>
+      <div class="cards" id="cards"></div>
+    </section>
+  </main>
+
+  <main id="view-evento" class="evento-view" hidden></main>
+
+  <div class="barra-compra" id="barra-compra" hidden>
+    <div class="barra-inner">
+      <div class="barra-total">
+        <span class="barra-qtd" id="barra-qtd">1 ingresso</span>
+        <strong id="barra-valor">R$ 0,00</strong>
+      </div>
+      <a class="btn-pagar" id="btn-pagar" href="#">Ir para o pagamento</a>
+    </div>
+  </div>
+
+  <div class="folha-fundo" id="folha" hidden>
+    <div class="folha" role="dialog" aria-modal="true" aria-labelledby="folha-titulo">
+      <p class="folha-tag">Pré-visualização</p>
+      <h2 class="folha-titulo" id="folha-titulo">Checkout ainda não conectado</h2>
+      <p class="folha-texto">Quando o endereço do checkout estiver em <code>js/config.js</code>, este botão leva a pessoa para lá com os dados abaixo.</p>
+      <dl class="folha-dados" id="folha-dados"></dl>
+      <button class="btn-secundario" id="folha-fechar" type="button">Fechar</button>
+    </div>
+  </div>
+
+  <footer class="rodape">
+    <div class="wrap rodape-inner">
+      <img src="assets/logo.png" alt="" width="40" height="40">
+      <p>Dúvidas sobre um encontro? Fale com a gente no Instagram.</p>
+      <a class="insta" href="https://www.instagram.com/clube.aflora/" target="_blank" rel="noopener">@clube.aflora</a>
+    </div>
+  </footer>
+  <!--FIM-->
+
+  <script src="js/config.js"></script>
+  <script src="js/eventos.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
