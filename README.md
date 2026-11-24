@@ -13,7 +13,7 @@ js/app.js       quantidade, total e envio para o checkout
 assets/         foto de capa (ecobag.jpg)
 ```
 
-Data, horário, local, preço e vagas em `js/config.js` são provisórios.
+Para atualizar data, horário, local, preço e vagas, edite `js/config.js`. Com `preco: null`, a página mostra "Valor em breve" e o botão de pagamento fica desativado.
 
 ## Como ver
 

@@ -24,7 +24,7 @@
   $("ev-titulo").textContent = ev.titulo;
   $("ev-resumo").textContent = ev.resumo;
   $("ev-quando").textContent = SEMANA[data.getDay()] + ", " + data.getDate() + " de " + MESES[data.getMonth()] +
-    " · " + hora(ev.inicio) + " às " + hora(ev.fim);
+    " · " + (ev.fim ? hora(ev.inicio) + " às " + hora(ev.fim) : "às " + hora(ev.inicio));
   $("ev-local").textContent = ev.local;
   $("capa-data").textContent = data.getDate() + " " + MESES[data.getMonth()].slice(0, 3);
   $("ev-inclui").innerHTML = (ev.inclui || []).map(function (i) {
@@ -64,10 +64,19 @@
     }
   }
 
-  if (passado || esgotado) {
+  var semPreco = typeof ev.preco !== "number";
+
+  if (semPreco && !passado) {
+    $("compra").hidden = true;
+    $("barra-qtd").textContent = "Ingressos";
+    $("barra-valor").textContent = "Valor em breve";
+    pagar.textContent = "Em breve";
+    pagar.setAttribute("aria-disabled", "true");
+    pagar.removeAttribute("href");
+  } else if (passado || esgotado) {
     $("compra").hidden = true;
     $("barra-qtd").textContent = passado ? "Encontro encerrado" : "Sem vagas";
-    $("barra-valor").textContent = brl.format(ev.preco);
+    $("barra-valor").textContent = semPreco ? "" : brl.format(ev.preco);
     pagar.textContent = passado ? "Encerrado" : "Esgotado";
     pagar.setAttribute("aria-disabled", "true");
     pagar.removeAttribute("href");
