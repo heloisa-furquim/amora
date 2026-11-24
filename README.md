@@ -10,6 +10,7 @@ index.html      a página
 css/style.css   visual (cores e fontes no topo do arquivo)
 js/config.js    dados do evento e endereço do checkout  ← edite aqui
 js/app.js       quantidade, total e envio para o checkout
+assets/         foto de capa (ecobag.jpg)
 ```
 
 Data, horário, local, preço e vagas em `js/config.js` são provisórios.

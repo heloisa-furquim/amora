@@ -70,24 +70,12 @@ button { font: inherit; color: inherit; }
 /* Capa */
 .capa {
   position: relative; overflow: hidden;
-  aspect-ratio: 5 / 4; max-width: 100%;
+  aspect-ratio: 1; max-width: 100%;
   border-radius: 28px;
   display: grid; place-items: center;
   background: repeating-linear-gradient(90deg, var(--lilas-claro) 0 44px, var(--lilas-listra) 44px 88px);
 }
-.capa-flor {
-  position: absolute; width: min(68%, 340px); aspect-ratio: 1;
-  -webkit-mask: var(--flor) center / contain no-repeat;
-  mask: var(--flor) center / contain no-repeat;
-  background: var(--creme);
-}
-.capa-bolsa { position: relative; width: min(36%, 180px); height: auto; transform: rotate(-6deg); }
-.capa-bolsa .alca { fill: none; stroke: var(--vinho); stroke-width: 6; stroke-linecap: round; }
-.capa-bolsa .corpo { fill: var(--branco); stroke: var(--vinho); stroke-width: 3; stroke-linejoin: round; }
-.capa-bolsa .tinta-rosa { fill: var(--rosa); }
-.capa-bolsa .tinta-lilas { fill: var(--lilas); }
-.capa-bolsa .tinta-vinho { fill: var(--vinho); }
-.capa-bolsa .pincelada { fill: none; stroke: var(--rosa); stroke-width: 4; stroke-linecap: round; }
+.capa img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 45%; }
 .capa-data {
   position: absolute; left: 14px; bottom: 14px;
   padding: 8px 14px; border-radius: 999px;
